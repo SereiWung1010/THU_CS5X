@@ -1,1 +1,1 @@
-All files related to discrete
+Everything discrete
