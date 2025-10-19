@@ -1,0 +1,72 @@
+1. 使用 A → B 永真, 证明。
+
+证. $P \to (Q \to R) \Rightarrow (P \to Q) \to (P \to R)$ 
+
+即证. $P \to (Q \to R) \to ((P \to Q) \to (P \to R)) = T $
+
+$$
+\begin{align*}
+& P \to (Q \to R) \to ((P \to Q) \to (P \to R)) \\\\
+&= P \to (\neg Q \lor R) \to ((\neg P \lor Q) \to (\neg P \lor R)) &蕴含等值式 \\\\
+&= (\neg P \lor (\neg Q \lor R)) \to (\neg (\neg P \lor Q) \lor (\neg P \lor R)) &蕴含等值式 \\\\
+&= (\neg P \lor (\neg Q \lor R)) \to ((P \land \neg Q) \lor (\neg P \lor R)) &摩根律 \\\\
+&= \neg (\neg P \lor (\neg Q \lor R)) \lor ((P \land \neg Q) \lor (\neg P \lor R)) &蕴含等值式 \\\\
+&= (P \land \neg (\neg Q \lor R)) \lor ((P \land \neg Q) \lor (\neg P \lor R)) &摩根律 \\\\
+&= (P \land (Q \land \neg R)) \lor ((P \land \neg Q) \lor (\neg P \lor R)) &摩根律 \\\\
+&= (P \land Q \land \neg R) \lor ((P \lor (\neg P \lor R)) \land (\neg Q \lor (\neg P \lor R))) &分配律 \\\\
+&= (P \land Q \land \neg R) \lor (((P \lor \neg P) \lor R) \land (\neg Q \lor \neg P \lor R)) &结合律\\\\
+&= (P \land Q \land \neg R) \lor (((T) \lor R) \land (\neg Q \lor \neg P \lor R)) &补余律 \\\\
+&= (P \land Q \land \neg R) \lor ((T) \land (\neg Q \lor \neg P \lor R)) &零律 \\\\
+&= (P \land Q \land \neg R) \lor (\neg Q \lor \neg P \lor R) &同一律 \\\\
+&= (P \land Q \land \neg R) \lor (\neg(Q \land P) \lor R) &摩根律 \\\\
+&= (P \land Q \land \neg R) \lor \neg (P \land Q \land \neg R) &摩根律、交换律\\\\
+&= T \quad 证毕 &补余律
+\end{align*}
+$$
+
+===========================================================================================
+
+2. 使用 A ∧ ¬ B 永假来证明。
+
+证. $P \to (Q \to R) \Rightarrow (P \to Q) \to (P \to R)$ 
+
+即证. $(P \to (Q \to R)) \land \neg ((P \to Q) \to (P \to R)) = F$ 
+
+$$
+\begin{align*}
+&(P \to (Q \to R)) \land \neg ((P \to Q) \to (P \to R)) \\\\
+&=(P \to (\neg Q \lor R)) \land \neg ((\neg P \lor Q) \to (\neg P \lor R)) &蕴含等值式 \\\\
+&=(\neg P \lor (\neg Q \lor R)) \land \neg (\neg (\neg P \lor Q) \lor (\neg P \lor R)) &蕴含等值式 \\\\
+&=(\neg P \lor \neg Q \lor R) \land \neg ((P \land \neg Q) \lor (\neg P \lor R)) &摩根律 \\\\
+&=(\neg P \lor \neg Q \lor R) \land (\neg (P \land \neg Q) \land \neg (\neg P \lor R)) &摩根律 \\\\
+&=(\neg P \lor \neg Q \lor R) \land ((\neg P \lor Q) \land (P \land \neg R)) &摩根律 \\\\
+&=(\neg P \lor \neg Q \lor R) \land ((\neg P \land (P \land \neg R)) \lor (Q \land (P \land \neg R))) &分配律 \\\\
+&=(\neg P \lor \neg Q \lor R) \land ((F \land \neg R) \lor (Q \land (P \land \neg R))) &结合律、补余律\\\\
+&=(\neg P \lor \neg Q \lor R) \land ((F) \lor (Q \land (P \land \neg R))) &零律 \\\\
+&=(\neg P \lor \neg Q \lor R) \land (Q \land P \land \neg R) &同一律 \\\\
+&=(\neg P \lor \neg Q \lor R) \land \neg(\neg(Q \land P) \lor R) &摩根律 \\\\
+&=(\neg P \lor \neg Q \lor R) \land \neg(\neg P \lor \neg Q \lor R) &摩根律、交换律\\\\
+&= F \quad 矛盾 &补余律
+\end{align*}
+$$
+
+===========================================================================================
+
+3. 使用解释法来证明
+
+证. $P \to (Q \to R) \Rightarrow (P \to Q) \to (P \to R)$ 
+
+设 $P \to (Q \to R) = T$，
+
+$1^o.\ \ $ 若 $P=F$，显然 $P \to (Q \to R) = T$, 及 $(P \to Q) \to (P \to R) = T$
+
+$2^o.\ \ $ 若 $P=T$ 为真，必有 $(Q \to R)=T$，可得：
+
+$\quad a.$ 若 $Q=F$，显然 $(P \to Q)=F$，即 $(P \to Q) \to (P \to R)=T$
+
+$\quad b.$ 若 $Q=T$，必有 $R=T$, 从而有 $(P \to Q) \to (P \to R)=T$
+
+综上可得，任一解释，当 $P \to (Q \to R)=T$, 必有 $(P \to Q) \to (P \to R)=T$。 
+
+故，推理式成立。
+
