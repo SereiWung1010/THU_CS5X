@@ -1,0 +1,18 @@
+使用推理规则证明，注意步骤按照教材2.9书写。
+¬Q∨S,(E→¬U)→¬S⇒Q→E
+
+$$
+\begin{align*}
+&(1) \quad \neg Q \lor S &前提引入 \\\\
+&(2) \quad Q \to S &(1)置换 \\\\
+&(3) \quad Q &附加前提引入 \\\\
+&(4) \quad S &(2)(3)分离 \\\\
+&(5) \quad (E \to \neg U) \to \neg S &前提引入 \\\\
+&(6) \quad S \land ((E \to \neg U) \to \neg S) &(4)(5) \\\\
+&(7) \quad \neg (E \to \neg U) &(6)拒取式 \\\\
+&(8) \quad \neg (\neg E \lor \neg U) &(7)置换 \\\\
+&(9) \quad E \land U &(8)置换 \\\\
+&(10) \quad E &(9)简化律 \\\\
+&(11) \quad Q \to E &条件证明规则
+\end{align*}
+$$
