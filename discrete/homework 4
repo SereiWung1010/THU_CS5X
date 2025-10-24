@@ -1,0 +1,109 @@
+Yao
+4.1 归结法
+利用归结法证明：
+(S→¬Q)∧(P→Q)∧(R∨S)∧(R→¬Q)⇒¬P
+Markdown:
+$$
+\begin{align*}
+&(S\to \neg Q)\land(P\to Q)\land(R\lor S)\land(R\to \neg Q)\\\\
+=&(\neg S\lor \neg Q)\land(\neg P\lor Q)\land(R\lor S)\land(\neg R\lor \neg Q)\quad 摩根律\\\\
+&建立子句集: A= \\{ \neg S\lor \neg Q,\neg P\lor Q,R\lor S,\neg R\lor \neg Q \\} \\\\
+&归结过程:\\\\
+&1.\neg S\lor \neg Q\\\\
+&2.\neg P\lor Q\\\\
+&3.R\lor S\\\\
+&4.\neg R\lor \neg Q\\\\
+&5.\neg S\lor \neg P——(1)(2)归结\\\\
+&6.\neg R\lor \neg P——(2)(4)归结\\\\
+&7.R\lor \neg P——(3)(5)归结\\\\
+&8.\neg P——(6)(7)归结
+\end{align*}
+$$
+
+4.2 罗素公理系统
+(1)⊢P→(Q∨P)
+Markdown:
+$$
+\begin{align*}
+&证明:\quad \vdash P\to(Q\lor P)\\\\
+&(1)\vdash (Q\to R)\to((P\lor Q)\to(P\lor R)) &公理4\\\\
+&(2)\vdash (Q\to R)\to((\neg P\lor Q)\to(\neg P\lor R)) &(1)代入\dfrac{P}{\neg P}\\\\
+&(3)\vdash ((P\lor Q)\to(Q\lor P))\to((\neg P\lor(P\lor Q))\to(\neg P\lor(Q\lor P))) &(2)代入\dfrac{Q}{P\lor Q} \dfrac{R}{Q\lor P}\\\\
+&(4)\vdash (P\lor Q)\to(Q\lor P) &公理3\\\\
+&(5)\vdash (\neg P\lor(P\lor Q))\to(\neg P\lor(Q\lor P)) &(3)(4)分离\\\\
+&(6)\vdash (P\to(P\lor Q))\to(P\to(Q\lor P)) &(5)定义1\\\\
+&(7)\vdash P\to(P\lor Q) &公理2\\\\
+&(8)\vdash P\to(Q\lor P) &(6)(7)分离\\\\
+&证毕
+\end{align*}
+$$
+
+(2)⊢Q→(P→Q)
+Markdown:
+$$
+\begin{align*}
+&证明:\quad \vdash Q\to(P\to Q)\\\\
+&(1)\vdash P\to(Q\lor P) &结论(1)最终结论\\\\
+&(2)\vdash S\to(\neg P\lor S) &(1)代入\dfrac{P}{S} \dfrac{Q}{\neg P}\\\\
+&(3)\vdash Q\to(\neg P\lor Q) &(2)代入\dfrac{S}{Q}\\\\
+&(4)\vdash Q\to(P\to Q) &(3)定义1\\\\
+&证毕
+\end{align*}
+$$
+
+(3)⊢P∨¬P
+Markdown:
+$$
+\begin{align*}
+&证明:\quad \vdash P\lor \neg P\\\\
+&(1)\vdash P\to(P\lor Q) &公理2\\\\
+&(2)\vdash P\to(P\lor P) &(1)代入\dfrac{Q}{P}\\\\
+&(3)\vdash (P\lor P)\to P &公理1\\\\
+&(4)\vdash (Q\to R)\to((P\lor Q)\to(P\lor R)) &公理4\\\\
+&(5)\vdash (Q\to R)\to((\neg P\lor Q)\to(\neg P\lor R)) &(4)代入\dfrac{P}{\neg P}\\\\
+&(6)\vdash (Q\to R)\to((P\to Q)\to(P\to R)) &定义1\\\\
+&(7)\vdash ((P\lor P)\to P)\to((P\to (P\lor P))\to(P\to P)) &代入\dfrac{Q}{P\lor P} \dfrac{R}{P}\\\\
+&(8)\vdash (P\to (P\lor P))\to(P\to P) &(3)(7)分离\\\\
+&(9)\vdash P\to P &(2)(8)分离\\\\
+&(11)\vdash (P\lor Q)\to(Q\lor P) &公理3\\\\
+&(12)\vdash (\neg P\lor P)\to(P\lor \neg P) &(11)代入\dfrac{P}{\neg P}\dfrac{Q}{P}\\\\
+&(13)\vdash (P\to P)\to(P\lor \neg P) &(12)定义1\\\\
+&(14)\vdash P\lor \neg P &(9)(12)分离\\\\
+&证毕
+\end{align*}
+$$
+
+(4)⊢(¬P∨¬Q)→¬(P∧Q)
+Markdown:
+$$
+\begin{align*}
+&证明:\quad \vdash (\neg P\lor \neg Q)\to \neg(P\land Q)\\\\
+&(1)\vdash P\lor \neg P &结论(3)最终结论\\\\
+&(2)\vdash \neg(\neg P\lor \neg Q)\lor \neg \neg(\neg P\lor \neg Q) &(1)代入\dfrac{P}{\neg (\neg P\lor \neg Q)}\\\\
+&(3)\vdash (\neg P\lor \neg Q)\to \neg \neg(\neg P\lor \neg Q) &(2)定义1\\\\
+&(4)\vdash (\neg P\lor \neg Q)\to \neg(P\land Q) &(3)定义2\\\\
+&证毕
+\end{align*}
+$$
+
+(5)⊢¬(P∧Q)→(¬P∨¬Q)
+Markdown:
+$$
+\begin{align*}
+&证明:\quad \neg(P\land Q)\to(\neg P\lor \neg Q)\\\\
+&(1)\vdash P\lor \neg P &结论(3)最终结论\\\\
+&(2)\vdash \neg \neg P\lor \neg \neg \neg P &(1)代入\dfrac{p}{\neg \neg P}\\\\
+&(3)\vdash \neg P\to \neg \neg \neg P &(2)定义1\\\\
+&(4)\vdash (Q\to R)\to((P\lor Q)\to(P\lor R)) &公理4\\\\
+&(5)\vdash (\neg P\to \neg \neg \neg P)\to((P\lor \neg P)\to(P\lor \neg \neg \neg P)) &(4)代入\dfrac{Q}{\neg P}\dfrac{R}{\neg \neg \neg P}\\\\
+&(6)\vdash (P\lor \neg P)\to(P\lor \neg \neg \neg P) &(3)(5)分离\\\\
+&(7)\vdash P\lor \neg \neg \neg P &(1)(6)分离\\\\
+&(8)\vdash (P\lor Q)\to(Q\lor P) &公理3\\\\
+&(9)\vdash (P\lor \neg \neg \neg P)\to (\neg \neg \neg P\lor P) &(8)代入\dfrac{Q}{\neg \neg \neg P}\\\\
+&(10)\vdash \neg \neg \neg P\lor P &(7)(9)分离\\\\
+&(11)\vdash \neg \neg P\to P &(10)定义1\\\\
+&(12)\vdash \neg \neg(\neg P\lor \neg Q)\to (\neg P\lor \neg Q) &(11)代入\dfrac{P}{\neg P\lor \neg Q}\\\\
+&(13)\vdash \neg(P\land Q)\to (\neg P\lor \neg Q) &(12)定义2\\\\
+&证毕
+\end{align*}
+$$
