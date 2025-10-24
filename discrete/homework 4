@@ -107,3 +107,27 @@ $$
 &证毕
 \end{align*}
 $$
+
+4.3 王浩算法
+依王浩算法判断该蕴含式是否正确：¬(P∧Q)→(¬P∨¬Q)
+Markdown:
+$$
+\begin{align*}
+(1) && \neg P\land Q & \stackrel s \Rightarrow \neg P\lor \neg Q & (\text{写成相继式}) \\\\
+(2) &&  & \stackrel s \Rightarrow \neg P\lor \neg Q,P\land Q & (\neg \Rightarrow)\\\\
+(3) &&  & \stackrel s \Rightarrow \neg P\lor \neg Q,P, Q & (\land \Rightarrow)\\\\
+(4) &&  & \stackrel s \Rightarrow \neg P, P, Q \ \ \text{而且} & \\\\
+    &&  & \stackrel s \Rightarrow \neg Q, P, Q & (\lor \Rightarrow) \\\\
+(5) &&  P& \stackrel s \Rightarrow P, Q \ \ \text{而且} & \\\\
+    &&  & \stackrel s \Rightarrow \neg Q, P, Q & (\neg \Rightarrow) \\\\
+(6) &&  P& \stackrel s \Rightarrow P, Q \ \ \text{而且} & \\\\
+    &&  Q& \stackrel s \Rightarrow P, Q & (\neg \Rightarrow) \\\\
+\end{align*}
+$$
+$$
+\begin{align*}
+&由 (6) 中的两个相继式均已无联结词，\\\\
+&而且在\stackrel s \Rightarrow 的两端都有共同命题变项了，\\\\
+&从而都是公理。定理得证。
+\end{align*}
+$$
