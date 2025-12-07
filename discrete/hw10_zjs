@@ -1,0 +1,193 @@
+============ 列出关系的元素 ============
+
+(1)（5 分） (1) A = { 0 , 1 , 2 } , B = { 0 , 2 , 4 } ， R = { < x , y > ∣ x , y ∈ A ∩ B } 
+> $ARB=\\{<2,2>\\}$ 
+
+(2)（5 分） A = { 1 , 2 , 3 , 4 , 5 } , B = { 1 , 2 , 3 } , R = { < x , y > ∣ x ∈ A ∧ y ∈ B ∧ x = y 2 } 
+> $ARB=\\{<4,2>\\}$
+
+(3)（5 分） 列出所有从 A = { a , b , c } 到 B = { d } 的关系。
+
+由 $A$ 到 $B$ 的关系为， $A \times B$ 的任意子集
+
+已知 $A=\\{a,b,c\\}$ , $B=\\{d\\}$
+
+$A \times B = \\{<a,d>,<b,d>,<c,d>\\}$
+
+所有从 $A$ 到 $B$ 的关系为 $\\{\empty, \\{<a,d>\\},\\{<b,d>\\},\\{<c,d>\\},\\{<a,d>,<b,d>\\},\\{<a,d>,<c,d>\\},\\{<b,d>,<c,d>\\},\\{<a,d>,<b,d>,<c,d>\\}\\}$
+
+============ 求集合的dom和ran ============
+  
+设 A={<1,2>,<2,4>,<3,3>}, B={<1,3>,<2,4>,<4,2>}
+
+(1)（10 分） 求： d o m ( A ∪ B ) 和 r a n ( A ∩ B )
+
+$A \cup B = \\{<1,2>, <1,3>, <2,4>, <3,3>, <4,2>\\}$
+
+$\because \ dom(R) = \\{x \ | \ (\exist y) (<x,y> \in R)\\}$
+
+$\therefore \ dom(A \cup B) = \\{1,2,3,4\\}$
+
+$A \cap B = \\{<2,4>\\}$
+
+$\because \ ran(R) = \\{y \ | \ (\exist x) (<x,y> \in R)\\}$
+
+$\therefore \ ran(A \cap B) = \\{4\\}$
+
+============ dom的证明 ============
+
+(1)（5 分） d o m ( R ∪ S ) = d o m ( R ) ∪ d o m ( S ) 
+
+定义：
+
+$dom(R)=\\{x\ | \ (\exist y)(<x,y>\in R)\\}$ 
+
+$A \cup B = \\{x \ | \ x \in A \lor x \in B\\}$ 
+
+证明：
+
+$$
+\begin{align*}
+dom(R \cup S) &= \\{x \ | \ (\exist y)(<x,y> \ \in R \cup S)  \\} \\\\
+&= \\{x \ | \ (\exist y)(<x,y> \ \in R \ \lor <x,y> \ \in S)  \\} \\\\
+&= \\{x \ | \ (\exist y)(<x,y> \ \in R)  \lor (\exist y) (<x,y> \ \in S)  \\} \\\\
+&= \\{x \ | \ (\exist y)(<x,y> \ \in R)\\}  \cup \\{x \ | \ (\exist y) (<x,y> \ \in S)  \\} \\\\
+&= dom(R) \cup dom(S)
+\end{align*}
+$$
+
+(2)（5 分） d o m ( R ∩ S ) ⊆ d o m ( R ) ∩ d o m ( S ) 
+
+定义：
+
+$dom(R)=\\{x\ | \ (\exist y)(<x,y>\in R)\\}$ 
+
+$A \cap B = \\{x \ | \ x \in A \land x \in B\\}$ 
+
+$A \sube B \Leftrightarrow (\forall x)(x \in A \to x \in B)$
+
+证明：
+
+$$
+\begin{align*}
+dom(R \cap S) &= \\{x \ | \ (\exist y)(<x,y> \ \in R \cap S)  \\} \\\\
+&= \\{x \ | \ (\exist y)(<x,y> \ \in R \ \land <x,y> \ \in S)  \\} \\\\
+&\Leftrightarrow (\forall x)(\exist y)(<x,y> \ \in R \ \land <x,y> \ \in S) \\\\
+&\Rightarrow(\forall x)(\exist y)(<x,y> \ \in R) \land (\forall x)(\exist y)(<x,y> \ \in S) \\\\
+&\Leftrightarrow dom(R) \cap dom(S)
+\end{align*}
+$$
+
+$\therefore dom(R \cap S) \sube dom(R) \cap dom(S)$
+
+============ 写出关系的数量 ============
+
+(1)（5 分） 设 A = { 1 , 2 , 3 }，在 A 上有多少不同的关系？（直接写数字，例如 233）
+
+> 512 
+  
+(2)（5 分） 设 ∣ A ∣ = n ，在 A 上有多少不同的关系？（直接写公式，不要包含 $ 符号，例如 e^{e^n} 或 {n^2}^n）
+
+> {2^n}^2
+
+============ 定义关系 ============
+
+(1)（10 分） 对 n ∈ N 且 n > 2 ，用二元关系定义 n 元关系。
+
+定义 n 元关系：
+
+若 $n \in \mathbb{N}$ , 且 $n > 2$,  $A_1, A_2,..., A_n$ 是 $n$ 个集合， 则 $(A_1 \times ... \times A_{n-1}) \times A_n$ 的任一子集称为从 $(A_1 \times ... \times A_{n-1})$ 到 $A_n$ 上的一个 n 元关系。
+
+============ 关系的表示方法 ============
+
+对 A = { 0 , 1 , 2 , 3 , 4 } 上的下列关系，分别用集合的列举法（2 分）和关系矩阵（3 分）表示。
+
+(1)（5 分） R 1 = { < x , y > ∣ 2 ≤ x ∧ y ≤ 2 }
+
+对 $A=\\{0,1,2,3,4\\}$ 上的 $R_1$ : 
+
+集合的列举法：
+$$
+R_1 = \\{
+     \langle 2, 0 \rangle, 
+     \langle 2, 1 \rangle, 
+     \langle 2, 2 \rangle, 
+     \langle 3, 0 \rangle, 
+     \langle 3, 1 \rangle, 
+     \langle 3, 2 \rangle, 
+     \langle 4, 0 \rangle, 
+     \langle 4, 1 \rangle, 
+     \langle 4, 2 \rangle
+\\}
+$$
+
+关系矩阵：
+$$
+\begin{pmatrix}
+0 & 0 & 0 & 0 & 0 \\\\
+0 & 0 & 0 & 0 & 0 \\\\
+1 & 1 & 1 & 0 & 0 \\\\
+1 & 1 & 1 & 0 & 0 \\\\
+1 & 1 & 1 & 0 & 0
+\end{pmatrix}
+$$
+
+(2)（5 分） R 2 = { ⟨ x , y ⟩ ∣ x 和 y 是互质的 } (注意，0 和任意自然数均不互质)
+
+对 $A=\\{0,1,2,3,4\\}$ 上的 $R_2$ : 
+
+集合的列举法：
+$$
+R_2 = \\{
+     \langle 1, 2 \rangle, 
+     \langle 1, 3 \rangle, 
+     \langle 1, 4 \rangle, 
+     \langle 2, 1 \rangle, 
+     \langle 2, 3 \rangle, 
+     \langle 3, 1 \rangle, 
+     \langle 3, 2 \rangle, 
+     \langle 3, 4 \rangle, 
+	 \langle 4, 1 \rangle, 
+     \langle 4, 3 \rangle
+\\}
+$$
+
+关系矩阵：
+$$
+\begin{pmatrix}
+0 & 0 & 0 & 0 & 0 \\\\
+0 & 1 & 1 & 1 & 1 \\\\
+0 & 1 & 0 & 1 & 0 \\\\
+0 & 1 & 1 & 0 & 1 \\\\
+0 & 1 & 0 & 1 & 0
+\end{pmatrix}
+$$
+
+============ 复合关系的分配律 ============
+
+设 R, S, T 是 A 上的关系。
+  
+(1)（10 分） 证明： R ∘ ( S ∪ T ) = ( R ∘ S ) ∪ ( R ∘ T )
+
+设 $R, S, T$ 是 $A$ 上的关系，
+
+$$
+\begin{align*}
+R \circ (S \cup T) &= \\{ \langle x,z \rangle \ | \ (\exist y)(\langle x,y \rangle \in (S \cup T) \ \land \langle y,z \rangle \in R) \\} \\\\
+&= \\{ \langle x,z \rangle \ | \ (\exist y)(\langle x,y \rangle \in (S \cup T) \ \land \langle y,z \rangle \in R) \\} \\\\
+&= \\{ \langle x,z \rangle \ | \ (\exist y)((\langle x,y \rangle \in S \lor \langle x,y \rangle \in T) \ \land \langle y,z \rangle \in R) \\} \\\\
+&= \\{ \langle x,z \rangle \ | \ (\exist y)((\langle x,y \rangle \in S \land \langle y,z \rangle \in R)\lor (\langle x,y \rangle \in T \ \land \langle y,z \rangle \in R)) \\} \\\\
+&= \\{ \langle x,z \rangle \ | \ (\exist y)(\langle x,y \rangle \in S \land \langle y,z \rangle \in R)\lor (\exist y)(\langle x,y \rangle \in T \ \land \langle y,z \rangle \in R) \\} \\\\
+&= \\{ \langle x,z \rangle \ | \ (\exist y)(\langle x,y \rangle \in S \land \langle y,z \rangle \in R)\\} \cup \\{ \langle x,z \rangle \ | \ (\exist y)(\langle x,y \rangle \in T \ \land \langle y,z \rangle \in R)\\} \\\\
+&= (R \circ S) \cup (R \circ T)
+\end{align*}
+$$
+
+
+
+
+
+
+
+
+  
